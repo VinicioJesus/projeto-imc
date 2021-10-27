@@ -18,9 +18,9 @@ public class Tela {
 
 		// Fontes da minha tela
 		Font fontTitulo = new Font("Arial", Font.PLAIN, 22);
-		Font fontTextoNormal = new Font("Arial", Font.PLAIN, 14);
+		Font fontTextoNormal = new Font("Arial", Font.BOLD, 14);
 		Font fontSubtitulo = new Font("Arial", Font.BOLD, 18);
-		Font fontResultado = new Font("Arial", Font.BOLD, 14);
+		Font fontResultado = new Font("Arial", Font.BOLD, 18);
 
 		// Cores da minha tela
 		Color verde = new Color(0, 128, 0);
@@ -39,37 +39,42 @@ public class Tela {
 
 		JLabel lblPeso = new JLabel("Seu Peso:");
 		lblPeso.setBounds(20, 100, 70, 30);
-		lblTitulo.setFont(fontTextoNormal);
+		lblPeso.setFont(fontTextoNormal);
 
 		JLabel lblAltura = new JLabel("Sua Altura: ");
-		lblAltura.setBounds(20, 150, 70, 30);
-		lblTitulo.setFont(fontTextoNormal);
+		lblAltura.setBounds(20, 150, 100, 30);
+		lblAltura.setFont(fontTextoNormal);
 
 		JTextField txtPeso = new JTextField();
-		txtPeso.setBounds(100, 100, 100, 40);
+		txtPeso.setBounds(130, 100, 100, 40);
 
 		JTextField txtAltura = new JTextField();
-		txtAltura.setBounds(100, 150, 100, 40);
+		txtAltura.setBounds(130, 150, 100, 40);
 
 		JButton btnCalcular = new JButton("Calcular IMC");
 		btnCalcular.setBounds(30, 200, 200, 50);
 
 		JLabel lblResultados = new JLabel("Resultados:");
-		lblResultados.setBounds(20, 280, 70, 30);
+		lblResultados.setBounds(20, 280, 150, 30);
+		lblResultados.setFont(fontSubtitulo);
 
 		JLabel lblValorImc = new JLabel("Valor IMC: ");
 		lblValorImc.setBounds(20, 340, 80, 30);
-		lblTitulo.setFont(fontTextoNormal);
+		lblValorImc.setFont(fontTextoNormal);
 
 		JLabel lblEstadoIMC = new JLabel("Estado do IMC: ");
 		lblEstadoIMC.setBounds(20, 390, 120, 30);
-		lblTitulo.setFont(fontTextoNormal);
+		lblEstadoIMC.setFont(fontTextoNormal);
 
-		JLabel lblMostraValorImc = new JLabel();
-		lblMostraValorImc.setBounds(150, 340, 300, 30);
+		JLabel lblMostrarValorImc = new JLabel();
+		lblMostrarValorImc.setBounds(150, 340, 300, 30);
+		lblMostrarValorImc.setFont(fontResultado);
+		lblMostrarValorImc.setForeground(verde);
 
-		JLabel lblMostraEstadoImc = new JLabel();
-		lblMostraEstadoImc.setBounds(150, 390, 300, 30);
+		JLabel lblMostrarEstadoImc = new JLabel();
+		lblMostrarEstadoImc.setBounds(150, 390, 300, 30);
+		lblMostrarEstadoImc.setFont(fontResultado);
+		lblMostrarEstadoImc.setForeground(verde);
 
 		
 
@@ -82,8 +87,8 @@ public class Tela {
 		tela.getContentPane().add(lblResultados);
 		tela.getContentPane().add(lblValorImc);
 		tela.getContentPane().add(lblEstadoIMC);
-		tela.getContentPane().add(lblMostraValorImc);
-		tela.getContentPane().add(lblMostraEstadoImc);
+		tela.getContentPane().add(lblMostrarValorImc);
+		tela.getContentPane().add(lblMostrarEstadoImc);
 
 		tela.setVisible(true); // aparecer a tela
 		
@@ -98,8 +103,8 @@ public class Tela {
 				imc.setAltura(txtAltura.getText());
 				
 				
-				lblMostraValorImc.setText(imc.mostrarImcComoString());
-				lblMostraEstadoImc.setText(imc.mostrarStatusImc());
+				lblMostrarValorImc.setText(imc.mostrarImcComoString());
+				lblMostrarEstadoImc.setText(imc.mostrarStatusImc());
 			}
 		});
 
